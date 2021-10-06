@@ -1,0 +1,15 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "");
+	int A, x, y;
+	cout << "Введите А" << "\n";
+	cin >> A;
+	x = A;
+	y = pow(x, 3);
+	cout << "A в степени 15 = ";
+	cout << x * pow(x, 4) * y * pow(y,2) * x;
+}
