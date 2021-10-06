@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+	int A, B, c;
+	setlocale(0, "");
+	cout << "Введите число А: " << "\n";
+	cin >> A;
+	cout << "Введите число B: " << "\n";
+	cin >> B;
+	c = A;
+	A = B;
+	B = c;
+	cout << "Поменяем местами значения А и В" << "\n";
+	cout << "A: ";
+	cout << A << "\n";
+	cout << "B: ";
+	cout << B << "\n";
+}
