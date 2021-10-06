@@ -1,9 +1,10 @@
 #include <iostream>
 #include <cmath>
+#include <locale.h>
 
 using namespace std;
 
-int main() 
+int main()
 {
 	int num;
 	setlocale(0, "");
@@ -87,13 +88,18 @@ int main()
 		cout << "Введите координаты точки C:" << "\n";
 		cin >> x3;
 		cin >> y3;
-		cout << "Периметр треугольника равен: ";
-		double a = double(sqrt((pow(x2 - x1, 2) + pow(y2 - y1, 2))));
-		double b = double(sqrt((pow(x3 - x1, 2) + pow(y3 - y1, 2))));
-		double c = double(sqrt((pow(x3 - x2, 2) + pow(y3 - y2, 2))));
-		double p = a + b + c;
-		cout << p << "\n";
-		cout << "Площадь треугольника равна: ";
-		cout << sqrt((p / 2) * (p / 2 - a) * (p / 2 - b) * (p / 2 - c));
+		if ((x1 == x2 and y1 == y2) or (x2 == x3 and y2 == y3) or (x1 == x3 or y1 == y3)) {
+			cout << "Такого треугольника не существует" << "\n";
+		}
+		else {
+			cout << "Периметр треугольника равен: ";
+			double a = double(sqrt((pow(x2 - x1, 2) + pow(y2 - y1, 2))));
+			double b = double(sqrt((pow(x3 - x1, 2) + pow(y3 - y1, 2))));
+			double c = double(sqrt((pow(x3 - x2, 2) + pow(y3 - y2, 2))));
+			double p = a + b + c;
+			cout << p << "\n";
+			cout << "Площадь треугольника равна: ";
+			cout << sqrt((p / 2) * (p / 2 - a) * (p / 2 - b) * (p / 2 - c));
+		}
 	}
 }
