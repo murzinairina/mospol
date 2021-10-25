@@ -1,0 +1,106 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() 
+{
+	setlocale(LC_ALL, "Russian");
+	double rad, angle, a;
+	int n;
+	double pi = 3.141592653589793238462643;
+	cout << "Введите номер задания от 1 до 6: " << "\n";
+	cin >> n;
+	if (n == 1) {
+		cout << "Введите угол в градусах: " << "\n";
+		cin >> a;
+		if (a > 0 and a < 360) {
+			rad = (a * pi) / 180;
+			cout << "Угол в радианах: " << "\n";
+			cout << rad;
+		}
+		else {
+			cout << "Ошибка";
+		}
+	}
+	else if (n == 2) {
+		cout << "Введите угол в радианах: " << "\n";
+		cin >> rad;
+		if (rad > 0 and rad < 2 * pi) {
+			angle = (rad * 180) / pi;
+			cout << "Угол в градусах: " << "\n";
+			cout << angle;
+		}
+		else {
+			cout << "Ошибка";
+		}
+	}
+	else if (n == 3) {
+		int x, y;
+		double s1, A;
+		cout << "Введите стоимость А: " << "\n";
+		cin >> A;
+		cout << "Введите X кг: " << "\n";
+		cin >> x;
+		cout << "Введите Y кг: " << "\n";
+		cin >> y;
+		s1 = A / x;
+		cout << "Стоимость 1 кг: " << "\n";
+		cout << s1 << "\n";
+		cout << "Стоимость Y кг: " << "\n";
+		cout << s1 * y << "\n";
+	}
+	else if (n == 4) {
+		double v1, v2, s1, t, s2;
+		cout << "Введите скорость первого автомобиля: " << "\n";
+		cin >> v1;
+		cout << "Введите скорость второго автомобиля: " << "\n";
+		cin >> v2;
+		cout << "Введите начальное расстояние между автомобилями: " << "\n";
+		cin >> s1;
+		cout << "Введите время t, через которое необходимо узнать расстояние между автомобилями: " << "\n";
+		cin >> t;
+		s2 = (v1 + v2) * t + s1;
+		cout << "Расстояние между автомобилями через t часов: " << "\n";
+		cout << s2 << "\n";
+	}
+	else if (n == 5) {
+		double A, B, x;
+		cout << "Введите A: " << "\n";
+		cin >> A;
+		cout << "Введите B: " << "\n";
+		cin >> B;
+		if (A != 0) {
+			x = (-B / A);
+			cout << "Решение уравнения A·x + B = 0 " << "\n";
+			cout << "x = ";
+			cout << x << "\n";
+		}
+		else {
+			cout << "Коэффициент А задан неверно " << "\n";
+		}
+	}
+	else if (n == 6) {
+		double a1, a2, b1, b2, c1, c2, x, y, opr;
+		cout << "Введите a1: " << "\n";
+		cin >> a1;
+		cout << "Введите b1: " << "\n";
+		cin >> b1;
+		cout << "Введите c1: " << "\n";
+		cin >> c1;
+		cout << "Введите a2: " << "\n";
+		cin >> a2;
+		cout << "Введите b2: " << "\n";
+		cin >> b2;
+		cout << "Введите c2: " << "\n";
+		cin >> c2;
+		opr = a1 * b2 - b1 * a2;
+		if (opr != 0) {
+			x = (c1 * b2 - c2 * b1) / opr;
+			y = (a1 * c2 - a2 * c1) / opr;
+			cout << "x = ";
+			cout << x << "\n";
+			cout << "y = ";
+			cout << y;
+		}
+	}
+}
