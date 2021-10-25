@@ -1,0 +1,79 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int n;
+	setlocale(LC_ALL, "Russian");
+	cout << "Введите номер задания от 1 до 5: " << "\n";
+	cin >> n;
+	if (n == 1)
+	{
+		int b, kb;
+		cout << "Введите размер файла в байтах: " << "\n";
+		cin >> b;
+		cout << "Размер файла в килобайтах: " << "\n";
+		kb = b / 1024;
+		cout << kb;
+	}
+	else if (n == 2)
+	{
+		int a, b;
+		cout << "Введите A: " << "\n";
+		cin >> a;
+		cout << "Введите B: " << "\n";
+		cin >> b;
+		if (a > b and b !=0) {
+			cout << "Максимально количество отрезков В, которое можно расположить на А: " << "\n";
+			cout << a / b;
+		}
+		else {
+			cout << "ошибка" << "\n";
+		}
+	}
+	else if (n == 3)
+	{
+		int a, b;
+		cout << "Введите A: " << "\n";
+		cin >> a;
+		cout << "Введите B: " << "\n";
+		cin >> b;
+		if (a > b and b != 0) {
+			cout << "Свободное место на отрезке А: " << "\n";
+			cout << a - (a / b) * b;
+		}
+		else {
+			cout << "ошибка" << "\n";
+		}
+	}
+	else if (n == 4)
+	{
+		int a;
+		cout << "Введите двузначное число A: " << "\n";
+		cin >> a;
+		int b = a % 10;
+		cout << "Перевернутое число А: " << "\n";
+		if (a % 10 == 0)
+		{
+			cout << 0 << "" << a / 10;
+		}
+		else {
+			cout << b * 10 + a / 10;
+		}
+	}
+	else if (n == 5)
+	{
+		int a;
+		cout << "Введите трехзначное число A: " << "\n";
+		cin >> a;
+		int b = a / 100;
+		if ((a / 10) % 10 == 0)
+		{
+			cout << 0 << (a %10) << b;
+		}
+		else {
+			cout << "Новое число: " << "\n";
+			cout << a % 100 * 10 + b;
+		}
+	}
+}
