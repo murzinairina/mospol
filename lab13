@@ -1,0 +1,77 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "rus");
+	int n;
+	cout << "Введите номер задания от 1 до 5: " << "\n";
+	cin >> n;
+	if (n == 1)
+	{
+		double x,i;
+		cout << "Введите стоимость 1кг конфет:" << "\n";
+		cin >> x;
+		for (i = 0.1; i < 1.1; i += 0.1)
+		{
+			cout << "Стоимость " << i << " " << "кг конфет: " << x * i << "\n";
+		}
+	}
+	if (n == 2)
+	{
+		int n, x;
+		double i;
+		double k = 1.1;
+		cout << "Введите количество сомножителей N" << "\n";
+		cin >> n;
+		for (i=1.2, x = 1; x < n; i += 0.1, x++)
+		{
+			k = k * i;
+		}
+		cout << "Произведение " << n << " " << "сомножителей равно " << k;
+	}
+	if (n == 3)
+	{
+		int n;
+		int k = 1;
+		cout << "Введите число N, квадрат которого необходимо вычислить" << "\n";
+		cin >> n;
+		cout << "Промежуточные суммы: " << "\n";
+		cout << k << "\n";
+		for (int i = 3; i < n*2; i += 2)
+		{
+			k += i;
+			cout << k << "\n";
+		}
+		cout << "Квадрат числа " << n << " " << "равен " << k;
+	}
+	if (n == 4)
+	{
+		double a, sum=0;
+		int n;
+		cout << "Введите число А: " << "\n";
+		cin >> a;
+		cout << "Введите число N: " << "\n";
+		cin >> n;
+		for (int i = 0; i <= n; i++)
+		{
+			sum += pow(a, i);
+		}
+		cout << "Полученная сумма равна " << sum;
+	}
+	if (n == 5)
+	{
+		double a, sum = 0;
+		int n, i;
+		cout << "Введите число А: " << "\n";
+		cin >> a;
+		cout << "Введите число N: " << "\n";
+		cin >> n;
+		for (i = 0; i<=n; i++)
+		{
+			sum += pow(-a, i);
+		}
+		cout << sum;
+	}
+}
