@@ -1,0 +1,110 @@
+#include <iostream>
+#include<math.h>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "rus");
+	int n;
+	cout << "Введите номер задания от 1 до 6: " << endl;
+	cin >> n;
+	if (n == 1)
+	{
+		int a, b;
+		cout << "Введите число А: " << endl;
+		cin >> a;
+		cout << "Введите число B: " << endl;
+		cin >> b;
+		cout << " " << endl;
+		if (a < b) {
+			for (a; a <= b; a++)
+			{
+				for (int j = 1; j <= a; j++)
+				{
+					cout << a << endl;
+				}
+			}
+		}
+		else
+			cout << "ошибка" << endl;
+	}
+	if (n == 2)
+	{
+		int a, b;
+		cout << "Введите число А: " << endl;
+		cin >> a;
+		cout << "Введите число B: " << endl;
+		cin >> b;
+		if (a<b)
+			cout << "ошибка" << endl;
+		else
+		{
+			while (a >= b)
+			{
+				a -= b;
+			}
+			cout <<"Длина незанятой части А равна " << a;
+		}
+	}
+	if (n == 3)
+	{
+		int n,k, sum=0;
+		int i = 1;
+		cout << "Введите число N: " << endl;
+		cin >> n;
+		for (i; sum < n; i++)
+		{
+			sum += i;
+		}
+		k = i-1;
+		cout << "Число К равно " << k << endl << "Сумма чисел от 1 до " << k << " равна " << sum;
+	}
+	if (n == 4)
+	{
+		int p, k=1;
+		cout << "Введите процент Р: " << endl;
+		cin >> p;
+		double a = 1 + 0.01 * p;
+		double s1 = 1000, s2 = 1000;
+		for (s1, k; s2 < 1100; k++)
+		{
+			s2 = s1 * pow(a, k);
+		}
+		cout << "Через " << k-1 << " месяцев вклад превысит 1100 рублей и будет составлять " << s2;
+	}
+	if (n == 5)
+	{
+		int a, b;
+		cout << "Введите число А: " << endl;
+		cin >> a;
+		cout << "Введите число B: " << endl;
+		cin >> b;
+		cout << "НОД чисел " << a << " и " << b << " равен ";
+		while (a != 0 and b != 0)
+		{
+			if (a > b)
+				a = a % b;
+			else
+				b = b % a;
+		}
+		cout << a + b;
+	}
+	if (n == 6)
+	{
+		int n, k=3, c1=1, c2=1, c3;
+		cout << "Введите число N: " << endl;
+		cin >> n;
+		while ((c1 + c2) < n)
+		{
+			k++;
+			c3 = c1 + c2;
+			c1 = c2;
+			c2 = c3;
+		}
+		if (n == (c1 + c2))
+			cout << "Номер числа Фибоначчи: " << k+1 << endl;
+		else
+			cout << "Не является числом Фибоначчи";
+	
+	}
+}
