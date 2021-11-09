@@ -417,4 +417,76 @@ int main()
 			}
 		}
 	}
+	if (n == 5)
+	{
+		int n;
+		cout << "Введите номер года: " << endl;
+		cin >> n;
+		if (n < 1) {
+			cout << "ошибка";
+			return 0;
+		}
+		n -= 3;
+		cout << "год ";
+		switch (n  % 60 / 12) {
+		case 0:
+			if (n % 12 > 2 && n % 12 < 6) cout << "зелёного ";
+			else cout << "зелёной ";
+			break;
+		case 1:
+			if (n % 12 > 2 && n % 12 < 6) cout << "красного ";
+			else cout << "красной ";
+			break;
+		case 2:
+			if (n % 12 > 2 && n % 12 < 6) cout << "желтого ";
+			else cout << "желтой ";
+			break;
+		case 3:
+			if (n % 12 > 2 && n % 12 < 6) cout << "белого ";
+			else cout << "белой ";
+			break;
+		case 4:
+			if (n % 12 > 2 && n % 12 < 6) cout << "черного ";
+			else cout << "черной ";
+			break;
+		}
+		switch (n % 12) {
+		case 0:
+			cout << "свиньи";
+			break;
+		case 1:
+			cout << "крысы";
+			break;
+		case 2:
+			cout << "коровы";
+			break;
+		case 3:
+			cout << "тигра";
+			break;
+		case 4:
+			cout << "зайца";
+			break;
+		case 5:
+			cout << "дракона";
+			break;
+		case 6:
+			cout << "змеи";
+			break;
+		case 7:
+			cout << "лошади";
+			break;
+		case 8:
+			cout << "овцы";
+			break;
+		case 9:
+			cout << "обезьяны";
+			break;
+		case 10:
+			cout << "курицы";
+			break;
+		case 11:
+			cout << "собаки";
+			break;
+		}
+	}
 }
