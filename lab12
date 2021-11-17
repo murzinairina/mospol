@@ -9,13 +9,29 @@ int main()
 	cin >> n;
 	if (n == 2)
 	{
-		int nach, pov, end;
-		cout << "Введите начальное направление робота: 1-север, 2-запад, 3-юг, 4-восток" << "\n";
+		int  pov, end;
+		char nach ,N, W, S, E;
+		cout << "Введите начальное направление робота: N-север, W-запад, S-юг, E-восток" << "\n";
 		cin >> nach;
 		cout << "Введите команду для робота: 0-продолжать движение, 1-поворот налево, -1-поворот направо" << "\n";
 		cin >> pov;
-		end = nach + pov;
 		cout << "после выполнения команды робот будет двигаться ";
+		switch (nach)
+		{
+		case('N'):
+			nach = 1;
+			break;
+		case('W'):
+			nach = 2;
+			break;
+		case('S'):
+			nach = 3;
+			break;
+		case('E'):
+			nach = 4;
+			break;
+		}
+		end = nach + pov;
 		switch (end)
 		{
 		case(0):
@@ -206,47 +222,50 @@ int main()
 				cout << "тридцать четыре учебных задания";
 				break;
 			default:
-				switch (x)
+				if (x != 20 and x != 30)
 				{
-				case(10):
-					cout << "десять ";
-					break;
-				case(11):
-					cout << "одиннадцать ";
-					break;
-				case(12):
-					cout << "двенадцать ";
-					break;
-				case(13):
-					cout << "тринадцать ";
-					break;
-				case(14):
-					cout << "четырнадцать ";
-					break;
-				case(15):
-					cout << "пятнадцать ";
-					break;
-				case(16):
-					cout << "шастнадцать ";
-					break;
-				case(17):
-					cout << "семнадцать ";
-					break;
-				case(18):
-					cout << "восемнадцать ";
-					break;
-				case(19):
-					cout << "девятнадцать ";
-					break;
-				case(20):
-					cout << "двадцать ";
-					break;
-				case(30):
-					cout << "тридцать ";
-					break;
-				case(40):
-					cout << "сорок ";
-					break;
+					switch (x)
+					{
+					case(10):
+						cout << "десять ";
+						break;
+					case(11):
+						cout << "одиннадцать ";
+						break;
+					case(12):
+						cout << "двенадцать ";
+						break;
+					case(13):
+						cout << "тринадцать ";
+						break;
+					case(14):
+						cout << "четырнадцать ";
+						break;
+					case(15):
+						cout << "пятнадцать ";
+						break;
+					case(16):
+						cout << "шестнадцать ";
+						break;
+					case(17):
+						cout << "семнадцать ";
+						break;
+					case(18):
+						cout << "восемнадцать ";
+						break;
+					case(19):
+						cout << "девятнадцать ";
+						break;
+					case(20):
+						cout << "двадцать ";
+						break;
+					case(30):
+						cout << "тридцать ";
+						break;
+					case(40):
+						cout << "сорок ";
+						break;
+					}
 				}
 				switch (x / 10)
 				{
@@ -257,23 +276,26 @@ int main()
 					cout << "тридцать ";
 					break;
 				}
-				switch (x % 10)
-				{
-				case(5):
-					cout << "пять ";
-					break;
-				case(6):
-					cout << "шесть ";
-					break;
-				case(7):
-					cout << "семь ";
-					break;
-				case(8):
-					cout << "восемь ";
-					break;
-				case(9):
-					cout << "девять ";
-					break;
+				if (x != 15 and x != 16 and x != 17 and x != 18 and x != 19) {
+
+					switch (x % 10)
+					{
+					case(5):
+						cout << "пять ";
+						break;
+					case(6):
+						cout << "шесть ";
+						break;
+					case(7):
+						cout << "семь ";
+						break;
+					case(8):
+						cout << "восемь ";
+						break;
+					case(9):
+						cout << "девять ";
+						break;
+					}
 				}
 				cout << "учебных заданий";
 			}
