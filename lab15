@@ -1,0 +1,116 @@
+#include <iostream>
+#include<math.h>
+using namespace std;
+
+double powerA3(double a, double b)
+{
+	b = pow(a, 3);
+	return b;
+}
+
+int sign(double x)
+{
+	if (x < 0) return -1;
+	if (x == 0) return 0;
+	if (x > 0) return 1;
+}
+
+double ringS(double r1, double r2)
+{
+	const double pi = 3.14;
+	return pi * r1 * r1 - pi * r2 * r2;
+}
+
+int quarter(double x1, double y1)
+{
+	if (x1 > 0 and y1 > 0)
+		return 1;
+	else if (x1 < 0 and y1 > 0)
+		return 2;
+	else if (x1 < 0 and y1 < 0)
+		return 3;
+	else if (x1 > 0 and y1 < 0)
+		return 4;
+}
+
+double fact2(int N)
+{
+	int proizv = 1;
+	if (N % 2 != 0)
+	{
+		for (int p = 1; p <= N; p += 2)
+		{
+			proizv *= p;
+		}
+	}
+	else
+	{
+		for (int p = 2; p <= N; p += 2)
+		{
+			proizv *= p;
+		}
+	}
+	return proizv;
+}
+
+
+int main()
+{
+	setlocale(LC_ALL, "rus");
+	int n;
+	cout << "Введите номер задания от 1 до 5: " << "\n";
+	cin >> n;
+	if (n == 1)
+	{
+		double j, k=0;
+		cout << "Введите 5 чисел:" << "\n";
+		for (int i = 0; i < 5; i++)
+		{
+			cin >> j;
+			cout << "Число " << j << " в третьей степени равно " << powerA3(j, k) << "\n";
+		}
+	}
+	if (n == 2)
+	{
+		double a, b;
+		cout << "Введите число А: " << "\n";
+		cin >> a;
+		cout << "Введите число B: " << "\n";
+		cin >> b;
+		cout << "Для данных вещественных чисел A и B значение выражения sign(A) + sign(B) равно " << sign(a) + sign(b);
+	}
+	if (n == 3)
+	{
+		double rad1, rad2;
+		for (int i = 0; i < 3; i++)
+		{
+			cout << "Введите два радиуса R1 и R2 (R1>R2) " << "\n";
+			cout << "R1: " << "\n";
+			cin >> rad1;
+			cout << "R2: " << "\n";
+			cin >> rad2;
+			cout << "Площадь кольца, заключенного между двумя окружностями с общим центром и заданными радиусами равна " << ringS(rad1, rad2) << "\n";
+		}
+	}
+	if (n == 4)
+	{
+		double x, y;
+		for (int i = 0; i < 3; i++)
+		{
+			cout << "Введите ненулевые координаты точки А:" << "\n";
+			cin >> x;
+			cin >> y;
+			if (quarter(x, y) == 1) cout << "Точка А лежит в 1 четверти" << "\n";
+			if (quarter(x, y) == 2) cout << "Точка А лежит в 2 четверти" << "\n";
+			if (quarter(x, y) == 3) cout << "Точка А лежит в 3 четверти" << "\n";
+			if (quarter(x, y) == 4) cout << "Точка А лежит в 4 четверти" << "\n";
+		}
+	}
+	if (n == 5)
+	{
+		int n1;
+		cout << "Введите число N>0" << "\n";
+		cin >> n1;
+		cout << fact2(n1) << "\n";
+	}
+}
