@@ -1,0 +1,160 @@
+#include <iostream>
+#include<math.h>
+using namespace std;
+
+void fill1(int arr[], int size)
+{
+	for (int i = 1, j = 0; j < size; i += 2, j++)
+	{
+		arr[j] = i;
+	}
+}
+
+void fill2(int arr[], int size, int a, int d)
+{
+	for (int j=0; j < size; j++)
+	{
+		arr[j] = a * pow(d, j);
+	}
+}
+
+void fill3(int arr[], int size, int a, int b)
+{
+	arr[0] = a;
+	arr[1] = b;
+	for (int j = 2, summa = a + b; j < size; j++)
+	{
+		arr[j] = summa;
+		summa += arr[j];
+	}
+}
+
+void fill4(int arr[], int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		arr[i] = rand() %10;
+	}
+}
+
+void print1(int arr[], int size)
+{
+	cout << "Массив: " << "";
+	for (int j = 0; j < size; j++)
+	{
+		cout << arr[j] << " ";
+	}
+}
+
+void print4(int arr[], int size)
+{
+	cout << "Новый массив: " << "";
+	if (size % 2 == 0)
+	{
+		for (int j = 0, i = size - 1; j < size / 2; j++, i--)
+		{
+			cout << arr[j] << " " << arr[i] << " ";
+		}
+	}
+	else
+	{
+		for (int j = 0, i = size - 1; j < size / 2; j++, i--)
+		{
+			cout << arr[j] << " " << arr[i] << " ";
+		}
+		cout << arr[size / 2];
+	}
+}
+
+void print5(int arr[], int size)
+{
+	cout << "Новый массив: " << "";
+	for (int j = 1; j < size; j+=2)
+	{
+		cout << arr[j] << " ";
+	}
+	if (size % 2 == 0)
+	{
+		for (int i = size-2; i >= 0; i -= 2)
+		{
+			cout << arr[i] << " ";
+		}
+	}
+	else
+	{
+		for (int i = size-1; i >= 0; i -= 2)
+		{
+			cout << arr[i] << " ";
+		}
+	}
+}
+
+
+
+int main()
+{
+	setlocale(LC_ALL, "rus");
+	int n;
+	cout << "Введите номер задания от 1 до 5: " << "\n";
+	cin >> n;
+	if (n == 1)
+	{
+		int kol1;
+		cout << "Введите размер массива N (целое положительное число): " << endl;
+		cin >> kol1;
+		int* arr1 = new int[kol1];
+		fill1(arr1, kol1);
+		print1(arr1, kol1);
+		delete[] arr1;
+	}
+	if (n == 2)
+	{
+		int kol2, a2, d2;
+		cout << "Введите размер массива N (>1): " << endl;
+		cin >> kol2;
+		cout << "Введите первый член геометрической прогрессии А: " << endl;
+		cin >> a2;
+		cout << "Введите знаменатель геометрической прогрессии D: " << endl;
+		cin >> d2;
+		int* arr2 = new int[kol2];
+		fill2(arr2, kol2, a2, d2);
+		print1(arr2, kol2);
+		delete[] arr2;
+	}
+	if (n == 3)
+	{
+		int kol3, A, B;
+		cout << "Введите размер массива N (>2): " << endl;
+		cin >> kol3;
+		cout << "Введите число А: " << endl;
+		cin >> A;
+		cout << "Введите число В: " << endl;
+		cin >> B;
+		int* arr3 = new int[kol3];
+		fill3(arr3, kol3, A, B);
+		print1(arr3, kol3);
+		delete[] arr3;
+	}
+	if (n == 4)
+	{
+		int kol4;
+		cout << "Введите размер массива N: " << endl;
+		cin >> kol4;
+		int* arr4 = new int[kol4];
+		fill4(arr4, kol4);
+		print1(arr4, kol4);
+		print4(arr4, kol4);
+		delete[] arr4;
+	}
+	if (n == 5)
+	{
+		int kol5;
+		cout << "Введите размер массива N: " << endl;
+		cin >> kol5;
+		int* arr5 = new int[kol5];
+		fill4(arr5, kol5);
+		print1(arr5, kol5);
+		print5(arr5, kol5);
+		delete[] arr5;
+	}
+}
