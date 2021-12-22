@@ -52,7 +52,7 @@ int main()
 		for (k; k <= l; k++)
 		{
 			kolvo += 1;
-			summa += arr[k-1]; //если индексы начинаются с 1, иначе убрать -1
+			summa += arr[k]; 
 		}
 		aver = summa / kolvo;
 		cout << "\n";
@@ -106,14 +106,17 @@ int main()
 		cin >> N;
 		int* arr = new int[N];
 		choice(N, arr);
-		int num;
+		int num=0;
 		for (int i = 1; i < N - 1; i++)
 		{
 			if (arr[i] > arr[i - 1] and arr[i] > arr[i + 1])
 				num = i;
 		}
 		cout << "\n";
-		cout << "Номер последнего локального максимума равен " << num;
+		if (num == 0 or num == N - 1)
+			cout << "Нет локального максимума" << endl;
+		else
+			cout << "Номер последнего локального максимума равен " << num;
 	}
 	if (n == 5)
 	{
@@ -121,7 +124,7 @@ int main()
 		cout << "Введите размер массива: " << endl;
 		cin >> N;
 		int* arr = new int[N];
-		cout << "Введите элементы массива: " << endl;
+		cout << "Введите элементы массива, в котором ровно два элемента одинаковые: " << endl;
 		for (int i = 0; i < N; i++) {
 			cout << "arr[" << i << "] =" << " ";
 			cin >> arr[i];
@@ -141,3 +144,4 @@ int main()
 		}
 	}
 }
+
